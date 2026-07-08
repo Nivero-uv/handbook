@@ -113,7 +113,7 @@ throughout this process via the [Helpdesk](https://help.cancerimage.eu/).
 | ![DICOM File Integrity Checker](figures/dcm-integrity.png) <br/> [https://bio.tools/dicom_file_integrity_checker_by_gibi230](https://bio.tools/dicom_file_integrity_checker_by_gibi230)   | ![lETHE Anonymizer](figures/lethe.png) <br/> [https://bio.tools/lethe_dicom_anonymizer](https://bio.tools/lethe_dicom_anonymizer) |
 | ![EUCAIM Wizard tool](figures/wizard.png) <br/> [https://bio.tools/eucaim_wizard_tool](https://bio.tools/eucaim_wizard_tool)                | ![Trace4MedicalImageCleaning](figures/trace4med.png) <br/> [https://bio.tools/trace4medicalimagecleaning](https://bio.tools/trace4medicalimagecleaning) |
 | ![DICOM tags extractor](figures/tag-extract.png) <br/>  [https://bio.tools/dicom_tags_extractor](https://bio.tools/dicom_tags_extractor)       | ![DICOM defacing anonymation](figures/deface.png) <br/> [https://bio.tools/dicom_defacing_anonymation](https://bio.tools/dicom_defacing_anonymation) | 
-| ![EUCAIM ETL](figures/etl.png) <br/> [https://bio.tools/eetl_toolset](https://bio.tools/eetl_toolset)                                    |  ![Data Integration Quality Check Tool](figures/diqct.png) <br/> [https://bio.tools/data_integration_quality_check_tool_diqct](https://bio.tools/data_integration_quality_check_tool_diqct) |
+| ![EUCAIM ETL](figures/etl.png) <br/> [https://bio.tools/eetl_toolset](https://bio.tools/eetl_toolset)         |  ![Data Integration Quality Check Tool](figures/diqct.png) <br/> [https://bio.tools/data_integration_quality_check_tool_diqct](https://bio.tools/data_integration_quality_check_tool_diqct) |
 | ![Image duplication check tool](figures/dupl-check-tool.png) <br/> [https://bio.tools/image_duplicate_check_tool](https://bio.tools/image_duplicate_check_tool)    |  ![Image duplicates checker](figures/dupl-check.png) <br/> [https://bio.tools/dicom_image_similarity-duplicate_checker](https://bio.tools/dicom_image_similarity-duplicate_checker) |
 
 [Figure 7](#fig_datatools): EUCAIM data preparation tools for data holders.
@@ -138,7 +138,7 @@ permissions that can be requested on the first access
 ([https://harbor.eucaim.cancerimage.eu/harbor/projects/3/repositories](https://harbor.eucaim.cancerimage.eu/harbor/projects/3/repositories))
 
 Instructions on how to request access and download tools are available 
-[here](https://drive.eucaim.cancerimage.eu/s/pxpTJWSTFsLbqPQ?dir=/&editing=false&openfile=true).
+[here](https://drive.eucaim.cancerimage.eu/s/pxpTJWSTFsLbqPQ?dir=/&editing=false&openfile=true)
 
 #### Access to the EUCAIM drive repository
 
@@ -205,7 +205,7 @@ If your imaging data are not already de-identified, you may use the
   ([Figure 9](#fig_dataanon)). In case your Life Science account is not
   assigned to a known organization, then this will be empty and so you
   can create a [Helpdesk](https://help.cancerimage.eu/) ticket in the 
-  group of "dashboard" to request one.
+  group of “Dashboard” to request one.
 
 Special attention must be given to **embedded text** in images, which
 may contain patient-identifiable information, as well as **craniofacial
@@ -214,9 +214,7 @@ apply additional de-identification techniques to mitigate this risk.
 
 **Tools:** the [**DICOM defacing anonymisation**](https://bio.tools/dicom_defacing_anonymation) tool
 from the EUCAIM catalogue ([Figure 7](#fig_datatools)) may be used to remove facial
-features from your DICOM images. For 2D ultrasounds and mammography, 
-you may use the [**Trace4MedicalImage cleaning**](https://bio.tools/trace4medicalimagecleaning) tool, that
-detects and removes encapsulated text in DICOM files. [The Lethe EUCAIM Anonymizer](https://harbor.eucaim.cancerimage.eu/harbor/projects/3/repositories/lethe-dicom-anonymizer)
+features from your DICOM images. [The Lethe EUCAIM Anonymizer](https://harbor.eucaim.cancerimage.eu/harbor/projects/3/repositories/lethe-dicom-anonymizer)
 tool also provides options to remove burned-in PHI pixel data from the
 images.
 
@@ -230,9 +228,9 @@ re-identification of patients based on your **imaging metadata** before
 sharing your dataset, you may use the [EUCAIM **Wizard tool**](https://bio.tools/eucaim_wizard_tool). Extraction of imaging
 metadata to feed the wizard tool is possible by using the [**DICOM tags extractor**](https://bio.tools/dicom_tags_extractor) tool
 ([Figure 7](#fig_datatools)).
-You may also use the [ARX Anonymization Tool](https://bio.tools/arx) to assess the re-identification risk of
-your clinical metadata, but it requires the specification of the
-quasi-identifier attributes by the DH. In addition, the creation of
+You may also use the [ARX Anonymization Tool](https://bio.tools/arx) to assess 
+the re-identification risk of your clinical metadata, but it requires the specification 
+of the quasi-identifier attributes by the DH. In addition, the creation of
 generalization hierarchies is necessary if you want to perform a
 utility–risk trade-off analysis and apply appropriate risk-mitigation
 strategies.
@@ -335,8 +333,7 @@ for:
 The preparation of your dataset will follow 7 steps: 
 clinical data structuring, imaging correspondence with clinical data, image annotation (optional),
 de-identification, data quality assessment, data conversion to EUCAIM Common Data Model, 
-and Data transfer (optional).
-They are described below.
+and Data transfer (optional). They are described below.
 
 ![Figure 10. Steps recommended to prepare your Tier 2 or Tier 3 ](figures/step-prep-Tier2-3.png)
 
@@ -350,32 +347,32 @@ using another tabular template file
 
 **How the tabular template file is organized:**
 
-  - The "Data elements" tab lists the entities and their corresponding
+  - The “Data elements” tab lists the entities and their corresponding
     data elements for clinical variables, with definition and data type;
 
   - The other 3 tabs show an example of how to structure your datasets
     of positive or diagnostic cases (for negative screening and control
     groups, please refer to the corresponding template file);
 
-    - the "Overarching Episode" corresponds to the entire course of the
+    - the “Overarching Episode” corresponds to the entire course of the
       patient’s data collection (example: from diagnosis to death or
       last contact). All diagnosis information should be in there;
 
     - each episode recorded in your dataset must be separated from the
       first tab in another tab in chronological order (example :
       “Treatment 1”, “Progression”, “Treatment 2”, “Remission”,
-      “Relapse”, “Treatment 3”, “Active Surveillance").
+      “Relapse”, “Treatment 3”, “Active Surveillance”).
 
 In each tab :
 
-- Line 1 contains the names of the variables as they are defined in your
+- On line 1 contains the names of the variables as they are defined in your
   own dataset
 
 - On line 2 are the name of the corresponding entity in the EUCAIM CDM,
-  as shown in the "Data elements" tab
+  as shown in the “Data elements” tab
 
 - On line 3 are the name of the corresponding data element name in the
-  EUCAIM CDM, as shown in the "Data elements" tab
+  EUCAIM CDM, as shown in the “Data elements” tab
 
 - On line 4 is the standard used in the dataset
 
@@ -395,7 +392,7 @@ For datasets with multiple timepoints, we recommend “vertical” datasets,
 meaning that your dataset has one row per timepoint.
 
 Please give your dataset file a name with the **dataset_ID as first
-character**.
+character**. Please see below [How to obtain a dataset ID](#how-to-obtain-a-dataset-id)
 
 Example : “Dataset_ID_colon_study_2022.xls”
 
@@ -404,8 +401,8 @@ locations.
 
 **How to complete the template file**
 
-<u>Notes before you start</u>: 1/ You may create your own tabular file
-or use this example file if useful. 2/ The example datasets in this file
+*Notes before you start*: 1. You may create your own tabular file
+or use this example file if useful. 2. The example datasets in this file
 only contain the mandatory variables; you should provide the full list
 of variables available in your dataset.
 
@@ -431,14 +428,14 @@ Relapse, Remission, Active Surveillance.
 Example 1 with “Imaging acquisition” as Procedure: we need to specify
 the sequence (CT, MRI) as “Code”, and assign to it “imaging” as
 Category. See in the Overarching episode tab on this dataset example,
-columns M-N. Note that the name of the variable is then merged on both
+columns L-M. Note that the name of the variable is then merged on both
 columns.
 
 Example 2 with “Smoking Status” as Medical History: we need to specify
 the status value itself (smoker, non-smoker, etc) as “Code”, and assign
 to it “Observation” as Category. See in the Overarching episode tab on
-this dataset example, columns Q-R. Again, the name of the variable must
-be merged on both columns."
+this dataset example, columns P-Q. Again, the name of the variable must
+be merged on both columns.
 
 5.  For each variable of your dataset, please provide an example value
     on line 5 (add the value as it is spelled exactly in your dataset)
@@ -448,7 +445,7 @@ be merged on both columns."
 - if the variable follows strictly a specific standard, please provide
   the name of the standard on line 4
 
-Example: in the Overarching episode tab, column K, the “Histological
+Example in the Overarching episode tab: column J, the “Histological
 type” variable strictly follows the SNOMEDCT standard; line 4 specifies
 “SNOMEDCT”, and an example value is provided on line 5.
 Important: both information must be separated by a comma, without space
@@ -458,28 +455,30 @@ Important: both information must be separated by a comma, without space
   provide the correspondence between all possible values from your
   dataset and the standard values on lines 6 and onwards
 
-Example 1 in the Overarching episode tab: column I, the "Tumor site:
-Region" variable follows the SNOMEDCT standard using an in-house coding;
-line 4 specifies "SNOMEDCT", an example value is provided on line 5, and
+Example 1 in the Overarching episode tab: column H, the “Tumor site:
+Region” variable follows the SNOMEDCT standard using an in-house coding;
+line 4 specifies “SNOMEDCT”, an example value is provided on line 5, and
 correspondence for all possible values present in the dataset to the
 SNOMEDCT codes is listed on lines 6-9, separated by a comma.
 
-Example 2 in the Overarching episode tab: column L, the "Histological
-subtype" variable follows the SNOMEDCT standard using an in-house
-naming; line 4 specifies "SNOMEDCT", an example value is provided on
+Example 2 in the Overarching episode tab: column K, the “Histological
+subtype” variable follows the SNOMEDCT standard using an in-house
+naming; line 4 specifies “SNOMEDCT”, an example value is provided on
 line 5, and correspondence for all possible values present in the
-dataset to the SNOMEDCT codes is listed in lines 6-9, separated by a
+dataset to the SNOMEDCT codes is listed in lines 6-8, separated by a
 comma.
 
 - if the variable does not follow a specific standard, please state
-  "custom" on line 4, and provide the list of all possible values from
+  “custom” on line 4, and provide the list of all possible values from
   your dataset for that variable on lines 6 and onwards
 
-Example in the Overarching episode tab : column J, the "Tumor Site :
-Laterality" variable does not follow a standard, but only uses the label
-"Left" or "Right"; in that case line 4 specifies "custom", an example
+Example in the Overarching episode tab : column I, the “Tumor Site :
+Laterality” variable does not follow a standard, but only uses the label
+“Left” or “Right”; in that case line 4 specifies “custom”, an example
 value is provided on line 5, and all possible values present in the
-dataset (here "Left" and "Right" is listed on lines 6-7.
+dataset (here “Left” and “Right” is listed on lines 6-7.
+
+> To validate your clinical dataset image metadata structure, you may submit a ticket to the “ETL data ingestion”  group, including a sample dataset with synthetic data through [EUCAIM Helpdesk](https://help.cancerimage.eu/).
 
 #### **Step 2: Imaging correspondence with clinical data**
 
@@ -521,8 +520,8 @@ documentation): PatientID, StudyUID, StudyDate, Study description [Table 4](#tab
 | ABC-000103                | 1.2.824.0.2.06135249.08.647.2304.7961                               | 2019-01-13                | I131 high dose                   |
 | ABC-000107                | 1.2.824.0.2.4862015.07.383.5623.6820                                | 2017-05-17                | Bilat Mammography                |
 
-[Table 4](#tab_dicom_tags_selection): Example output file of the dicom_tags_selection script. The
-StudyDate, and StudyDescription in Study are provided for indication
+[Table 4](#tab_dicom_tags_selection): Example output file of the dicom_tags_selection script. 
+The StudyDate, and StudyDescription in Study are provided for indication
 only, to guide you for the mapping of each study to each episode (see
 step 2).
 
@@ -547,9 +546,9 @@ You then need to edit the output file by adding the “Episode” and
 | ABC-000103                | 1.2.824.0.2.06135249.08.647.2304.7961                               | 2019-01-13                | I131 high dose                   | Treatment   | 3                     |
 | ABC-000107                | 1.2.824.0.2.4862015.07.383.5623.6820                                | 2017-05-17                | Bilat Mammography                | Diagnosis   | 1                     |
 
-[Table 5](#tab_correspond_studyid): Example of edited file with correspondence between StudyUID
-and both Episode and Timepoint. The part in blue corresponds to the
-part edited manually by the data holder.
+[Table 5](#tab_correspond_studyid): Example of edited file with correspondence 
+between StudyUID and both Episode and Timepoint. The part in blue corresponds 
+to the part edited manually by the data holder.
 
 #### **Step 3: Image annotation (optional)**
 
@@ -596,7 +595,7 @@ The use of [**Lethe EUCAIM Anonymizer**](https://harbor.eucaim.cancerimage.eu/ha
   ([Figure 9](#fig_dataanon)). In case your Life Science account is not
   assigned to a known organization, then this will be empty and so you
   can create a [Helpdesk](https://help.cancerimage.eu/) ticket in the 
-  group of "dashboard" to request one.
+  group of “Dashboard”  to request one.
 
 Special attention should be given to **embedded text** in images, that
 may contain patient-identifiable information, as well as **skull and
@@ -606,9 +605,7 @@ risk.
 
 **Tools:** Tools such as the [**DICOM defacing anonymisation**](https://bio.tools/dicom_defacing_anonymation) tool
 from the EUCAIM catalogue ([Figure 7](#fig_datatools)) may be used to remove facial
-features from your DICOM images. For 2D ultrasounds and mammography
-**dataset**, you may use the [**Trace4MedicalImage cleaning**](https://bio.tools/trace4medicalimagecleaning) tool, that
-detects and removes encapsulated text in DICOM files. [The Lethe EUCAIM Anonymizer](https://harbor.eucaim.cancerimage.eu/harbor/projects/3/repositories/lethe-dicom-anonymizer)
+features from your DICOM images. [The Lethe EUCAIM Anonymizer](https://harbor.eucaim.cancerimage.eu/harbor/projects/3/repositories/lethe-dicom-anonymizer)
 tool also provides options to remove burned-in PHI pixel data from the images.
 
 **Re-identification risk assessment for imaging and clinical data
@@ -655,10 +652,6 @@ from the EUCAIM catalogue can help you to do so:
 - The [**DICOM File integrity checker**](https://bio.tools/dicom_file_integrity_checker_by_gibi230)
   can check the **accuracy** and **integrity** of your imaging dataset.
 
-- For 2D ultrasounds and/or mammography **datasets,** **validity**
-  assessment is possible using the [**Trace4MedicalImage cleaning**](https://bio.tools/trace4medicalimagecleaning) tool,
-  that detects and removes encapsulated text in DICOM files.
-
 - **Uniqueness** can be addressed with two EUCAIM tools that search for
   image duplicates: the [**Image duplicates checker**](https://bio.tools/dicom_image_similarity-duplicate_checker),
   capable of detecting duplicate or visually similar DICOM series by
@@ -696,25 +689,25 @@ For your imaging dataset:
 > EUCAIM CDM.
 >
 > \- Extract in a tabular csv file all the 75 mandatory attributes (list
-> available here:
-> <https://docs.google.com/document/d/1mnTkf2fvERgaRyQPDFebZHLwB8aBRaIZRkwlMBr3ZXQ/edit?tab=t.0>)
+> available [here](https://docs.google.com/document/d/1mnTkf2fvERgaRyQPDFebZHLwB8aBRaIZRkwlMBr3ZXQ/edit?tab=t.0))
 > present in your dataset. You may already have such file, especially if
 > you used the Wizard tool on step 3 “de-identification” for
 > re-identification risk assessment of imaging data. If not, you may use
-> the **DICOM_tags_extractor** tool now**.**
+> the **DICOM_tags_extractor** tool to extract them.
 >
 > Finally, share the **two above-mentioned csv files** as well as the
-> **file from step 2 on PatientID/StudyUID correspondence** with the ETL
+> **file from step 2 on PatientID/StudyUID correspondence** with the ETL Data
 > ingestion support team through the [EUCAIM Helpdesk](https://help.cancerimage.eu/).
+
 
 ### <a id="tab_correspond_series"></a>
 | **Source series Description**         | **EUCAIM series description** |
 |---------------------------------------|-------------------------------|
-| AXIALT2TSE                            | T2 weighted                   |
-| axdifb1000                            | Diffusion weighted            |
-| e-THRIVE_BHPERFU                      | PW                            |
-| EP2D_DIFF_TRA_B50-1000_TRACEW_DFC_MIX | Diffusion weighted            |
-| t2_tse_tra_p2_384ESTRICTO             | T2 weighted                   |
+| AXIALT2TSE                            | *T2 weighted*                   |
+| axdifb1000                            | *Diffusion weighted*            |
+| e-THRIVE_BHPERFU                      | *PW*                            |
+| EP2D_DIFF_TRA_B50-1000_TRACEW_DFC_MIX | *Diffusion weighted*            |
+| t2_tse_tra_p2_384ESTRICTO             | *T2 weighted*                   |
 
 [Table 6](#tab_correspond_series): Example of correspondence between the Series Description from
 the source images and the Series Description from the EUCAIM standard.
@@ -723,6 +716,7 @@ holder. See
 [**here**](https://docs.google.com/document/d/1mnTkf2fvERgaRyQPDFebZHLwB8aBRaIZRkwlMBr3ZXQ/edit?tab=t.0)
 for the list of all possible SeriesDescription currently known in the
 EUCAIM vocabulary.
+
 
 #### **Step 7: Data transfer (optional)**
 
@@ -742,6 +736,7 @@ is stored in its final destination, and proceed with the next steps.
 > clinical data. You may apply the Wizard tool to your clinical data
 > file now that it is mapped to the EUCAIM CDM.
 
+
 ## **Metadata registration in the public catalogue (mandatory)**
 
 In parallel to dataset preparation, the associated metadata must be
@@ -753,8 +748,23 @@ below describes the steps to register your metadata.
 ### <a id="tab_steps_meta_reg"></a> 
 | Action | Description | Support |
 | -------- | -------- | -------- |
-| Provide the dataset's metadata in the spreadsheet template (Data Holder Template sheet) | The dataset schema can be downloaded from this [link](https://docs.google.com/spreadsheets/d/1cj6YzIAchHnEKlH612gO91WzHfEOB4TbwBrl9a0kgE0/edit?usp=sharing). In case of doubts with the terminology, use textual descriptions. | If there is any other doubt a [helpdesk](https://help.cancerimage.eu/) ticket can be created on the group of "catalogue". |
-| Make a request of registry upload | Create a [helpdesk](https://help.cancerimage.eu/) ticket on the group "catalogue", providing the spreadsheet file with the metadata information. The helpdesk team will contact you back informing if the dataset has been properly registered or requesting more information. | Same procedure |
+| Provide the dataset's metadata in the spreadsheet template (Data Holder Template sheet) | The dataset schema can be downloaded from this [link](https://docs.google.com/spreadsheets/d/1cj6YzIAchHnEKlH612gO91WzHfEOB4TbwBrl9a0kgE0/edit?usp=sharing). In case of doubts with the terminology, use textual descriptions. This metadata template must be completed for each dataset by entering the corresponding dataset ID in the dataset Identifier field. | If there is any other doubt a [helpdesk](https://help.cancerimage.eu/) ticket can be created on the group of “Catalogue”. |
+| Make a request of registry upload | Create a [helpdesk](https://help.cancerimage.eu/) ticket on the group “Catalogue”, providing the spreadsheet file with the metadata information. The helpdesk team will contact you back informing if the dataset has been properly registered or requesting more information. | Same procedure |
 | Verify the entries in the catalogue | Access the registry in the catalogue at the URL: https://catalogue.eucaim.cancerimage.eu/#/collection/ | Same procedure | 
 
 [Table 7](#tab_steps_meta_reg): Steps to submit the Metadata to the registry.
+
+#### How to obtain a dataset ID
+
+The procedure for obtaining a dataset ID depends on your modality of contribution: transferring data to one of the reference nodes or sharing data through a local node. 
+
+For new datasets, the dataset ID is required for:
+EUCAIM's catalogue: to populate the 'Identifier' field in the metadata template.
+ETL mapping (Tier 2 and Tier 3): used as a prefix in file names to launch the ETL process.
+It is very important that the dataset Identifier matches the Dataset_ID [here](https://eucaim.gitbook.io/handbook/datapreparation#step-1-clinical-data-structuring), as this is the only field that cannot be modified after the dataset is created.
+
+- If you are **transferring your dataset to the UPV node**, the dataset ID is automatically generated by the time you create your dataset [here](https://eucaim.gitbook.io/enduserguide/6-userguide4members#id-6.2.2.4.-upload-metadata).
+
+- If you are **transferring your dataset to the Health-RI node**, please kindly ask EMC partners by creating a ticket through the "Health-RI Reference node" group.
+
+- If you are **setting up your own local node**, you need to create a new Dataset_ID using https://www.uuidgenerator.net/. A UUID v4 is a string of 32 hexadecimal digits separated into 5 groups (8, 4, 4, 4 and 12 digits) separated by hyphens (e.g., 4aa2dfb3-6d16-4d89-8ee0-89aa3f9a8817).
