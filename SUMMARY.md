@@ -1,5 +1,6 @@
 # Table of contents
 
+* [README](README.md)
 * [1. Introduction](Introduction.md)
 * [2. Governance](Governance.md)
 * [3. Onboarding Process](Onboarding.md)
